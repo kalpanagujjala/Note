@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+   <form  method="post">{% csrf_token %}
+    <label for="titleId">Enter</label>
+    <input type="text" name="title" id="titleId" placeholder="enter title" required>
+    <label for="title_Id">Enter</label>
+    <input type="text" name="desc" id="title_Id" placeholder="enter desc" required>
+    <h2>{{ res.title }}</h2>
+    {% for record in res %}
+    <h3>{{ record.title }}--{{ record.desc }}</h3>
+    {% endfor %}
+    <button type="submit">add</button>
+
+   </form>
+</body>
+</html>
